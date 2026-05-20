@@ -129,9 +129,10 @@ nav.desk a:hover{color:#fff;background:rgba(255,255,255,.08);}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 h1.ht{
   font-family:'Syne',sans-serif;
-  font-size:clamp(52px,6.5vw,80px);font-weight:800;
-  color:#fff;line-height:1.0;margin-bottom:24px;
-  letter-spacing:-1.5px;
+  font-size:clamp(40px,8vw,80px);font-weight:800;
+  color:#fff;line-height:1.05;margin-bottom:24px;
+  letter-spacing:-1px;
+  word-wrap:break-word;
 }
 h1.ht .r{color:var(--red);}
 h1.ht .outline{
@@ -258,6 +259,7 @@ h2.st .r{color:var(--red);}
   color:var(--blue);text-decoration:none;transition:gap .2s;
 }
 .sc:hover .sc-link{gap:12px;}
+.sc-wide { grid-column: span 2; }
 
 /* ─── ABOUT ───────────────────────────────────────────────── */
 #about{background:#fff;}
@@ -512,9 +514,11 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
 @media(max-width:768px){
   nav.desk{display:none;}
   .hbtn{display:flex;}
-  h1.ht{font-size:52px;}
+  h1.ht{font-size:clamp(38px,10vw,52px);line-height:1.1;}
   .hero-content{padding-top:40px;}
+  .hero-right{flex-direction:column;}
   .srv-grid,.why-grid,.tq-grid,.con-grid,.abt-grid{grid-template-columns:1fr;}
+  .sc-wide{grid-column:span 1;}
   .abt-img::before{display:none;}
   .img-badge{bottom:-12px;right:-8px;}
   .ft-top{grid-template-columns:1fr;gap:28px;}
@@ -524,7 +528,7 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
   section{padding:70px 20px;}
   .hero-badges{flex-direction:column;}
   .hbtns{flex-direction:column;}
-  .btn-red,.btn-ghost{justify-content:center;}
+  .btn-red,.btn-ghost{justify-content:center;width:100%;}
 }
 </style>
 </head>
@@ -681,7 +685,7 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
         <p>Canada–US freight, handled end-to-end. We manage customs docs, border compliance, and delivery so your cargo moves without delays.</p>
         <a href="#contact" class="sc-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
       </div>
-      <div class="sc" data-a style="grid-column:span 2">
+      <div class="sc sc-wide" data-a>
         <div class="sc-icon" style="background:#7C3AED"><i class="fas fa-bolt"></i></div>
         <h3>Expedited Freight</h3>
         <p>When time is everything — we prioritize your load and move it fast. Same-day and next-day options available for urgent shipments anywhere in Ontario or across the border.</p>
