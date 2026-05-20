@@ -1048,20 +1048,27 @@ function submitForm(){
   },4000);
 }
 
-// ── Scroll-in animation ──
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.opacity='1';
-      e.target.style.transform='translateY(0)';
+// ── Scroll-in & Live Animation ──
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0) scale(1)';
+    } else {
+      // Re-hide elements so they animate again when scrolling up or down
+      e.target.style.opacity = '0';
+      e.target.style.transform = 'translateY(35px) scale(0.97)';
     }
   });
-},{threshold:.1});
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
 
-document.querySelectorAll('[data-a]').forEach((el,i)=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(28px)';
-  el.style.transition=`opacity .55s ease ${i*0.07}s, transform .55s ease ${i*0.07}s`;
+// Target cards, text blocks, and hero elements for live animations
+const animatedElements = document.querySelectorAll('[data-a], .sc, .wc, .tq, .abt-img, .stat-card, .hero-left, .con-form, .ci, .cta-dark');
+
+animatedElements.forEach((el) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(35px) scale(0.97)';
+  el.style.transition = 'all 0.65s cubic-bezier(0.2, 0.8, 0.2, 1)';
   io.observe(el);
 });
 </script>
