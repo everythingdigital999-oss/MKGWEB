@@ -1048,27 +1048,43 @@ function submitForm(){
   },4000);
 }
 
-// ── Scroll-in & Live Animation ──
+// ── Cooler 3D Scroll & Live Animation ──
+let delayCounter = 0;
+let resetTimer = null;
+
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
+      // Add dynamic stagger for items appearing together
+      e.target.style.transitionDelay = `${delayCounter * 0.1}s`;
       e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0) scale(1)';
+      e.target.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+      delayCounter++;
+      
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => { delayCounter = 0; }, 100);
     } else {
-      // Re-hide elements so they animate again when scrolling up or down
+      e.target.style.transitionDelay = '0s'; // fast disappear
       e.target.style.opacity = '0';
-      e.target.style.transform = 'translateY(35px) scale(0.97)';
+      e.target.style.transform = 'translateY(60px) scale(0.92) rotateX(-15deg)';
     }
   });
-}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-// Target cards, text blocks, and hero elements for live animations
+// Add 3D perspective to grids to make the rotateX pop
+document.querySelectorAll('.srv-grid, .why-grid, .tq-grid, .hero-right, .abt-grid, .con-grid').forEach(grid => {
+  grid.style.perspective = '1200px';
+});
+
+// Target elements
 const animatedElements = document.querySelectorAll('[data-a], .sc, .wc, .tq, .abt-img, .stat-card, .hero-left, .con-form, .ci, .cta-dark');
 
 animatedElements.forEach((el) => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(35px) scale(0.97)';
-  el.style.transition = 'all 0.65s cubic-bezier(0.2, 0.8, 0.2, 1)';
+  el.style.transformOrigin = 'center top';
+  el.style.transform = 'translateY(60px) scale(0.92) rotateX(-15deg)';
+  // Springy/bouncy bezier curve for the wow factor
+  el.style.transition = 'opacity 0.6s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
   io.observe(el);
 });
 </script>
