@@ -531,6 +531,13 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
   .btn-red,.btn-ghost{justify-content:center;width:100%;}
 }
 </style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    // REPLACE 'YOUR_PUBLIC_KEY' WITH YOUR ACTUAL EMAILJS PUBLIC KEY
+    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+  })();
+</script>
 </head>
 <body>
 
@@ -886,16 +893,16 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
       <div class="con-form">
         <h3>Request a Freight Quote</h3>
         <div class="frow">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="John"></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+          <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="John"></div>
+          <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Smith"></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Phone</label><input type="tel" placeholder="+1 (000) 000-0000"></div>
-          <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+          <div class="fg"><label>Phone</label><input type="tel" id="phone" placeholder="+1 (000) 000-0000"></div>
+          <div class="fg"><label>Email</label><input type="email" id="email" placeholder="you@company.com"></div>
         </div>
         <div class="fg">
           <label>Service Required</label>
-          <select>
+          <select id="service">
             <option value="" disabled selected>Select a service…</option>
             <option>Full Truckload (FTL)</option>
             <option>Partial Load (LTL)</option>
@@ -906,12 +913,12 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
           </select>
         </div>
         <div class="frow">
-          <div class="fg"><label>Pickup Location</label><input type="text" placeholder="City, Province / State"></div>
-          <div class="fg"><label>Delivery Location</label><input type="text" placeholder="City, Province / State"></div>
+          <div class="fg"><label>Pickup Location</label><input type="text" id="pickup" placeholder="City, Province / State"></div>
+          <div class="fg"><label>Delivery Location</label><input type="text" id="delivery" placeholder="City, Province / State"></div>
         </div>
         <div class="fg">
           <label>Load Details / Message</label>
-          <textarea placeholder="Weight, dimensions, cargo type, preferred dates…"></textarea>
+          <textarea id="message" placeholder="Weight, dimensions, cargo type, preferred dates…"></textarea>
         </div>
         <button class="fsub" id="fsub" onclick="submitForm()">
           <i class="fas fa-paper-plane"></i> Send Quote Request
@@ -1037,15 +1044,51 @@ window.addEventListener('scroll',()=>{
     window.scrollY>60?'0 4px 32px rgba(0,0,0,.4)':'none';
 });
 
-// ── Form feedback ──
+// ── Form feedback & EmailJS ──
 function submitForm(){
   const b=document.getElementById('fsub');
-  b.innerHTML='<i class="fas fa-check"></i> Sent! We\'ll be in touch shortly.';
-  b.style.background='#047857';
-  setTimeout(()=>{
-    b.innerHTML='<i class="fas fa-paper-plane"></i> Send Quote Request';
-    b.style.background='var(--red)';
-  },4000);
+  const originalText = b.innerHTML;
+  
+  // Basic validation to make sure they filled something
+  const email = document.getElementById('email').value;
+  if(!email) {
+    alert("Please provide at least your email so we can reach you!");
+    return;
+  }
+
+  b.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+  
+  const templateParams = {
+    fname: document.getElementById('fname').value,
+    lname: document.getElementById('lname').value,
+    phone: document.getElementById('phone').value,
+    email: email,
+    service: document.getElementById('service').value,
+    pickup: document.getElementById('pickup').value,
+    delivery: document.getElementById('delivery').value,
+    message: document.getElementById('message').value
+  };
+
+  // REPLACE 'YOUR_SERVICE_ID' AND 'YOUR_TEMPLATE_ID' WITH ACTUAL KEYS
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(() => {
+      b.innerHTML='<i class="fas fa-check"></i> Sent! We\'ll be in touch shortly.';
+      b.style.background='#047857';
+      // clear form
+      document.querySelectorAll('.con-form input, .con-form textarea').forEach(el => el.value = '');
+      document.getElementById('service').selectedIndex = 0;
+      
+      setTimeout(()=>{
+        b.innerHTML=originalText;
+        b.style.background='var(--red)';
+      }, 5000);
+    }, (error) => {
+      console.error('FAILED...', error);
+      b.innerHTML='<i class="fas fa-exclamation-triangle"></i> Error sending request.';
+      setTimeout(()=>{
+        b.innerHTML=originalText;
+      }, 4000);
+    });
 }
 
 // ── Cooler 3D Scroll & Live Animation ──
