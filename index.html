@@ -7,6 +7,8 @@
 <meta name="description" content="MKG Freight Lines — Brampton's trusted carrier for FTL, LTL, dedicated dispatch & cross-border logistics. CVOR certified. 24/7 dispatch.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="MKG Freightlines.ico">
+<link rel="shortcut icon" type="image/x-icon" href="MKG Freightlines.ico">
 <style>
 /* ─── TOKENS ─────────────────────────────────────────────── */
 :root{
@@ -229,37 +231,61 @@ h2.st .r{color:var(--red);}
 .sdesc{font-size:15px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:56px;}
 
 /* ─── SERVICES ───────────────────────────────────────────── */
-#services{background:var(--off);}
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.sc{
-  background:#fff;border-radius:16px;padding:34px 28px;
-  border:1px solid #E8EEF6;position:relative;overflow:hidden;
-  transition:all .3s;cursor:default;
+#services {
+  background: radial-gradient(ellipse at top, #3a0a0a 0%, #000 70%);
+  padding: 120px 28px;
+  position: relative;
+  overflow: hidden;
 }
-.sc::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--red),var(--blue));
-  transform:scaleX(0);transform-origin:left;transition:.35s;
+.srv-zigzag {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
 }
-.sc:hover::before{transform:scaleX(1);}
-.sc:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,.08);}
-.sc-icon{
-  width:52px;height:52px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+.srv-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  position: relative;
+  z-index: 2;
 }
-.sc-icon i{font-size:21px;color:#fff;}
-.sc h3{
-  font-family:'Syne',sans-serif;font-size:19px;font-weight:800;
-  color:var(--navy);margin-bottom:12px;letter-spacing:-.3px;
+.srv-item:nth-child(odd) {
+  align-self: flex-end; /* Right side */
 }
-.sc p{font-size:14px;color:var(--muted);line-height:1.75;}
-.sc-link{
-  display:inline-flex;align-items:center;gap:7px;margin-top:22px;
-  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:var(--blue);text-decoration:none;transition:gap .2s;
+.srv-item:nth-child(even) {
+  align-self: flex-start; /* Left side */
 }
-.sc:hover .sc-link{gap:12px;}
-.sc-wide { grid-column: span 2; }
+.srv-item img {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 28px;
+  transition: transform .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.srv-item:hover img {
+  transform: scale(1.05) translateY(-5px);
+}
+.srv-item h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.srv-item p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  max-width: 420px;
+}
+@media(max-width: 768px) {
+  .srv-item { width: 100%; align-self: center !important; }
+}
 
 /* ─── ABOUT ───────────────────────────────────────────────── */
 #about{background:#fff;}
@@ -551,7 +577,7 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
         2. Put it in the SAME folder as this HTML file
         3. The <img> tag below will automatically show it
       -->
-      <img src="mkg-logo.png" alt="MKG Freight Lines"
+      <img src="MKG Freightlines.png" alt="MKG Freight Lines"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <!-- Fallback text logo if PNG not found -->
       <div style="display:none;background:#1A5EBD;border-radius:6px;padding:5px 12px;font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:3px;">MKG</div>
@@ -660,44 +686,29 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
 
 <!-- ═══ SERVICES ═══ -->
 <section id="services">
-  <div class="sec">
-    <div class="eyebrow">What We Do</div>
-    <h2 class="st">Our <span class="r">Services</span></h2>
-    <p class="sdesc">
-      From full truckloads to dedicated dispatch — MKG Freight Lines moves your freight
-      across Ontario and the USA with zero compromise.
-    </p>
-    <div class="srv-grid">
-      <div class="sc" data-a>
-        <div class="sc-icon" style="background:var(--navy)"><i class="fas fa-truck"></i></div>
-        <h3>Full Truckload (FTL)</h3>
-        <p>Dedicated trailer, direct delivery. Ideal for large shipments that need fast, point-to-point service across Ontario and the USA.</p>
-        <a href="#contact" class="sc-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="sc" data-a>
-        <div class="sc-icon" style="background:var(--red)"><i class="fas fa-boxes"></i></div>
-        <h3>Partial Loads (LTL)</h3>
-        <p>Smarter freight costs. Your cargo shares a trailer — you pay only for the space you use, without sacrificing reliability or speed.</p>
-        <a href="#contact" class="sc-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="sc" data-a>
-        <div class="sc-icon" style="background:var(--blue)"><i class="fas fa-headset"></i></div>
-        <h3>Dedicated Dispatch</h3>
-        <p>In-house dispatch running 24/7. No outsourcing, no hold music — just real people coordinating your loads and keeping you updated.</p>
-        <a href="#contact" class="sc-link">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="sc" data-a>
-        <div class="sc-icon" style="background:#047857"><i class="fas fa-globe-americas"></i></div>
-        <h3>Cross-Border USA / Canada</h3>
-        <p>Canada–US freight, handled end-to-end. We manage customs docs, border compliance, and delivery so your cargo moves without delays.</p>
-        <a href="#contact" class="sc-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="sc sc-wide" data-a>
-        <div class="sc-icon" style="background:#7C3AED"><i class="fas fa-bolt"></i></div>
-        <h3>Expedited Freight</h3>
-        <p>When time is everything — we prioritize your load and move it fast. Same-day and next-day options available for urgent shipments anywhere in Ontario or across the border.</p>
-        <a href="#contact" class="sc-link">Contact Us Now <i class="fas fa-arrow-right"></i></a>
-      </div>
+  <div class="srv-zigzag">
+    <div class="srv-item" data-a>
+      <img src="https://whitestorktrucking.com/wp-content/uploads/2025/08/icone-transport-charge-complete-1.svg" alt="Full Load">
+      <h3>FULL LOAD (TL)</h3>
+      <p>Our fleet is ready to handle the full transport of your goods with efficiency and care.</p>
+    </div>
+    
+    <div class="srv-item" data-a>
+      <img src="https://whitestorktrucking.com/wp-content/uploads/2025/08/icone-transport-specialise-gold.svg" alt="Specialized Transport">
+      <h3>SPECIALIZED TRANSPORT</h3>
+      <p>We provide customized solutions for heavy loads, oversized equipment, and complex transport projects.</p>
+    </div>
+    
+    <div class="srv-item" data-a>
+      <img src="https://whitestorktrucking.com/wp-content/uploads/2025/08/icone-transport-charge-partielles.svg" alt="LTL">
+      <h3>LESS-THAN-TRUCKLOAD<br>TRANSPORTATION (LTL)</h3>
+      <p>Save on shipping and stay agile with our cost-effective less-than-truckload (LTL) transportation solutions.</p>
+    </div>
+    
+    <div class="srv-item" data-a>
+      <img src="https://whitestorktrucking.com/wp-content/uploads/2025/08/icone-solutions-logistiques.svg" alt="Logistics Solutions">
+      <h3>LOGISTICS SOLUTIONS</h3>
+      <p>Let our experts manage your transportation and delivery logistics — so you can focus on what matters most.</p>
     </div>
   </div>
 </section>
@@ -975,7 +986,7 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
     <div class="ft-top">
       <div class="ft-brand">
         <div class="ft-logo">
-          <img src="mkg-logo.png" alt="MKG"
+          <img src="MKG Freightlines.png" alt="MKG"
                onerror="this.style.display='none'">
           <div>
             <div class="fn">MKG Freight Lines</div>
