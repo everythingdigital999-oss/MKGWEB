@@ -600,6 +600,17 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
 .ft-bot .cv{display:flex;align-items:center;gap:6px;}
 .ft-bot .cv span{color:rgba(255,255,255,.38);}
 
+.cvor-chip-us {
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding-left: 20px;
+}
+@media(max-width: 480px) {
+  .cvor-chip-us {
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-top: 8px;
+  }
+}
 /* ─── RESPONSIVE ──────────────────────────────────────────── */
 @media(max-width:1024px){
   .hero-content{grid-template-columns:1fr;gap:40px;}
@@ -746,7 +757,7 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
     <div class="t-item"><i class="fas fa-headset"></i> Dedicated Dispatch</div>
     <div class="t-item"><i class="fas fa-globe-americas"></i> Cross-Border USA / Canada</div>
     <div class="t-item"><i class="fas fa-bolt"></i> Expedited Freight</div>
-    <div class="t-item"><i class="fas fa-shield-alt"></i> CVOR Certified — 206838232</div>
+    <div class="t-item"><i class="fas fa-shield-alt"></i> CVOR: 206838232 | USDOT: 7530106 | MC: 47061122</div>
     <div class="t-item"><i class="fas fa-map-marker-alt"></i> Brampton, Ontario</div>
     <!-- duplicate for seamless loop -->
     <div class="t-item"><i class="fas fa-truck"></i> Full Truckload (FTL)</div>
@@ -754,7 +765,7 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
     <div class="t-item"><i class="fas fa-headset"></i> Dedicated Dispatch</div>
     <div class="t-item"><i class="fas fa-globe-americas"></i> Cross-Border USA / Canada</div>
     <div class="t-item"><i class="fas fa-bolt"></i> Expedited Freight</div>
-    <div class="t-item"><i class="fas fa-shield-alt"></i> CVOR Certified — 206838232</div>
+    <div class="t-item"><i class="fas fa-shield-alt"></i> CVOR: 206838232 | USDOT: 7530106 | MC: 47061122</div>
     <div class="t-item"><i class="fas fa-map-marker-alt"></i> Brampton, Ontario</div>
   </div>
 </div>
@@ -810,11 +821,20 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
           <li><i class="fas fa-check-circle"></i><span><strong>Cross-border certified</strong> — Canada–USA corridors, fully compliant</span></li>
           <li><i class="fas fa-check-circle"></i><span><strong>GTA-based, North America-connected</strong> — local roots, national reach</span></li>
         </ul>
-        <div class="cvor-chip">
-          <i class="fas fa-shield-check"></i>
-          <div>
-            <div class="cl">CVOR Certified — Ontario Ministry of Transportation</div>
-            <div class="cn">206838232</div>
+        <div class="cvor-chip" style="display: flex; flex-wrap: wrap; gap: 16px 30px; border-left: 4px solid var(--blue); align-items: center;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-shield-alt" style="color:var(--blue); font-size: 20px;"></i>
+            <div>
+              <div class="cl">CVOR (ON)</div>
+              <div class="cn" style="font-size: 16px; margin: 0;">206838232</div>
+            </div>
+          </div>
+          <div class="cvor-chip-us" style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-globe-americas" style="color:var(--red); font-size: 20px;"></i>
+            <div>
+              <div class="cl">USDOT / MC (US)</div>
+              <div class="cn" style="font-size: 16px; margin: 0; letter-spacing: 1px;">7530106 / 47061122</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1036,9 +1056,12 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
         <div class="ci" style="border-left:4px solid var(--red)">
           <div class="ci-ico" style="background:#0D7377"><i class="fas fa-shield-alt"></i></div>
           <div>
-            <div class="cl">CVOR Registration</div>
-            <span class="cv">206838232</span>
-            <div class="cn">Ontario Ministry of Transportation</div>
+            <div class="cl">Compliance &amp; Authority</div>
+            <span class="cv" style="font-size: 14px; line-height: 1.5;">
+              CVOR: 206838232<br>
+              USDOT: 7530106 | MC: 47061122
+            </span>
+            <div class="cn">Fully Licensed &amp; Insured Carrier</div>
           </div>
         </div>
         <div class="cta-dark">
@@ -1096,9 +1119,10 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
     </div>
     <div class="ft-bot">
       <p>© 2025 MKG Freight Lines. All rights reserved. | Website by Social Daddy Inc.</p>
-      <div class="cv">
-        <i class="fas fa-shield-alt" style="color:var(--red)"></i>
-        CVOR: <span>206838232</span>
+      <div class="cv" style="display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px;">
+        <span><i class="fas fa-shield-alt" style="color:var(--red); margin-right: 6px;"></i>CVOR: 206838232</span>
+        <span>USDOT: 7530106</span>
+        <span>MC: 47061122</span>
       </div>
     </div>
   </div>
