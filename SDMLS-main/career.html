@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Our Team | Careers | MKG Freight Lines</title>
+<meta name="description" content="Drive with MKG Freight Lines. Brampton's trusted carrier offering competitive compensation, modern equipment, steady miles, and 24/7 support for AZ Drivers and Owner Operators.">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="MKG Freightlines.ico">
+<link rel="shortcut icon" type="image/x-icon" href="MKG Freightlines.ico">
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root{
+  --font-display:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SFNS Display", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:-apple-system, BlinkMacSystemFont, "SF Pro Text", "SFNS Text", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --navy:#0A1628;
+  --navy2:#0F1E35;
+  --blue:#1A5EBD;
+  --blue2:#2470D9;
+  --red:#CC2229;
+  --red2:#A81B21;
+  --gold:#F5A623;
+  --white:#fff;
+  --off:#0A111A;
+  --muted:#94A3B8;
+  --border:rgba(255,255,255,.08);
+  --glass:rgba(255,255,255,.05);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:#05090F;color:#E2E8F0;overflow-x:hidden;}
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+header{
+  position:fixed;top:0;width:100%;z-index:999;
+  background:rgba(10,22,40,.96);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+.h-inner{
+  max-width:1200px;margin:0 auto;padding:0 28px;
+  display:flex;align-items:center;justify-content:space-between;height:72px;
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo img{
+  height:52px;width:auto;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+}
+.logo-label{
+  display:flex;flex-direction:column;
+}
+.logo-label .brand{
+  font-family:var(--font-display);font-size:15px;font-weight:800;
+  color:#fff;letter-spacing:2px;text-transform:uppercase;line-height:1;
+}
+.logo-label .sub{
+  font-family:var(--font-display);font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--red);margin-top:3px;
+}
+nav.desk{display:flex;align-items:center;gap:2px;}
+nav.desk a{
+  color:rgba(255,255,255,.75);text-decoration:none;font-size:12px;
+  font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  padding:8px 14px;border-radius:6px;transition:.2s;
+}
+nav.desk a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-cta{
+  background:var(--red)!important;color:#fff!important;
+  padding:10px 22px!important;font-weight:700!important;
+  border-radius:8px!important;
+}
+.nav-cta:hover{background:var(--red2)!important;transform:translateY(-1px);}
+.hbtn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hbtn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+.mnav{display:none;flex-direction:column;background:var(--navy);border-top:1px solid var(--border);}
+.mnav.open{display:flex;}
+.mnav a{
+  padding:14px 28px;color:rgba(255,255,255,.75);text-decoration:none;
+  font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.05);transition:.2s;
+}
+.mnav a:hover{background:rgba(255,255,255,.05);color:#fff;}
+
+/* ─── HERO ────────────────────────────────────────────────── */
+#hero{
+  min-height:60vh;position:relative;display:flex;align-items:center;
+  background:var(--navy);overflow:hidden;padding-top:72px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('hero-truck.jpg') center/cover no-repeat;
+  opacity:0.3;
+}
+.hero-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(5,9,15,0.85) 0%, #05090F 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:1200px;margin:0 auto;padding:60px 28px;
+  text-align:center;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(204,34,41,.35);background:rgba(204,34,41,.1);
+  color:#ff8080;font-size:10px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:24px;
+}
+h1.ht{
+  font-family:var(--font-display);
+  font-size:clamp(36px,6vw,60px);font-weight:800;
+  color:#fff;line-height:1.1;margin-bottom:20px;
+  letter-spacing:-0.03em;
+}
+h1.ht .r{color:var(--red);}
+.hero-desc{
+  font-size:16px;color:rgba(255,255,255,.6);
+  line-height:1.8;max-width:600px;margin:0 auto;
+}
+
+/* ─── BENEFITS ───────────────────────────────────────────── */
+#benefits {
+  background: #05090F;
+  padding: 80px 28px;
+}
+.sec{max-width:1100px;margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:700;letter-spacing:4px;
+  text-transform:uppercase;color:var(--red);margin-bottom:14px;
+}
+.eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--red);}
+h2.st{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4.5vw,48px);font-weight:800;
+  color:#fff;line-height:1.1;margin-bottom:48px;letter-spacing:-0.025em;
+}
+h2.st .r{color:var(--red);}
+
+.benefits-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.benefit-card{
+  background:rgba(255,255,255,.03);border-radius:16px;padding:32px 24px;
+  border:1px solid rgba(255,255,255,.08);transition:.3s;
+}
+.benefit-card:hover{
+  transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.25);background:rgba(255,255,255,.05);
+}
+.b-ico{
+  width:46px;height:46px;border-radius:10px;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.b-ico i{color:#fff;font-size:18px;}
+.benefit-card h3{
+  font-family:var(--font-display);font-size:18px;font-weight:800;
+  color:#fff;margin-bottom:12px;letter-spacing:-0.015em;
+}
+.benefit-card p{font-size:14px;color:var(--muted);line-height:1.75;}
+
+/* ─── OPENINGS ───────────────────────────────────────────── */
+#openings {
+  background: #0A111A;
+  padding: 100px 28px;
+}
+.openings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 40px;
+}
+.job-card {
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+  transition: .3s;
+}
+.job-card:hover {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.15);
+}
+.job-info h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: #white;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.job-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.job-meta span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: rgba(26,94,189,.15);
+  color: #84b0f9;
+}
+.job-meta span.red-badge {
+  background: rgba(204,34,41,.15);
+  color: #ff8080;
+}
+.job-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.job-requirements {
+  list-style: none;
+}
+.job-requirements li {
+  font-size: 14px;
+  color: #E2E8F0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.job-requirements li i {
+  color: var(--red);
+  font-size: 12px;
+}
+.job-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  border-left: 1px solid rgba(255,255,255,.08);
+  padding-left: 40px;
+}
+.job-pay {
+  text-align: right;
+}
+.job-pay .amt {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.job-pay .lbl {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+.btn-apply-job {
+  background: var(--red);
+  color: #white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: .25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-apply-job:hover {
+  background: var(--red2);
+  transform: translateY(-2px);
+}
+
+/* ─── APPLY FORM ─────────────────────────────────────────── */
+#apply {
+  background: #05090F;
+  padding: 100px 28px;
+}
+.apply-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255,255,255,.03);
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 48px;
+}
+.apply-container h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.apply-container p.sub {
+  font-size: 15px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.frow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.fg label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.fg input, .fg select, .fg textarea {
+  padding: 13px 16px;
+  border: 1.5px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: #fff;
+  outline: none;
+  background: rgba(255,255,255,.05);
+  transition: border-color .2s;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--blue);
+}
+.fg textarea {
+  height: 120px;
+  resize: vertical;
+}
+.fsub {
+  width: 100%;
+  padding: 17px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: .25s;
+  margin-top: 10px;
+}
+.fsub:hover {
+  background: var(--red2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(204,34,41,.3);
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
+.ft{max-width:1100px;margin:0 auto;}
+.ft-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:48px;padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.ft-brand .ft-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.ft-brand .ft-logo img{height:46px;filter:drop-shadow(0 0 6px rgba(255,255,255,.1));}
+.ft-brand .ft-logo .fn{
+  font-family:var(--font-display);font-size:16px;font-weight:800;
+  color:#fff;letter-spacing:2px;text-transform:uppercase;line-height:1;
+}
+.ft-brand .ft-logo .fs{
+  font-family:var(--font-body);font-size:9px;color:var(--red);letter-spacing:3px;
+  text-transform:uppercase;margin-top:3px;
+}
+.ft-brand p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.8;max-width:280px;}
+.ft-col h4{
+  font-family:var(--font-display);font-size:13px;font-weight:800;
+  color:#fff;text-transform:uppercase;letter-spacing:1px;
+  margin-bottom:20px;padding-bottom:12px;position:relative;
+}
+.ft-col h4::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:24px;height:2px;background:var(--red);
+}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-col ul li a{color:rgba(255,255,255,.38);text-decoration:none;font-size:13px;transition:.2s;}
+.ft-col ul li a:hover{color:#fff;}
+.ft-ci2{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:rgba(255,255,255,.38);margin-bottom:11px;}
+.ft-ci2 i{color:var(--red);font-size:13px;margin-top:2px;flex-shrink:0;}
+.ft-ci2 a{color:rgba(255,255,255,.38);text-decoration:none;}
+.ft-ci2 a:hover{color:#fff;}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.ft-bot p,.ft-bot .cv{font-size:11px;color:rgba(255,255,255,.2);}
+.ft-bot .cv{display:flex;align-items:center;gap:6px;}
+.ft-bot .cv span{color:rgba(255,255,255,.38);}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width:1024px){
+  .benefits-grid{grid-template-columns:repeat(2,1fr);}
+  .job-card{grid-template-columns:1fr;gap:28px;}
+  .job-action{border-left:none;padding-left:0;align-items:flex-start;}
+  .job-pay{text-align:left;}
+  .ft-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  nav.desk{display:none;}
+  .hbtn{display:flex;}
+  .benefits-grid{grid-template-columns:1fr;}
+  .apply-container{padding:32px 20px;}
+  .frow{grid-template-columns:1fr;gap:0;}
+  .ft-top{grid-template-columns:1fr;gap:32px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+  })();
+</script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header id="hdr">
+  <div class="h-inner">
+    <a href="/#home" class="logo">
+      <img src="MKG Freightlines.png" alt="MKG Freight Lines"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div style="display:none;background:#1A5EBD;border-radius:6px;padding:5px 12px;font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:3px;">MKG</div>
+      <div class="logo-label">
+        <span class="brand">Freight Lines</span>
+        <span class="sub">Brampton · Ontario</span>
+      </div>
+    </a>
+    <nav class="desk">
+      <a href="/#home">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/#about">About</a>
+      <a href="/#testimonials">Reviews</a>
+      <a href="/career" style="color:#fff;background:rgba(255,255,255,.08);">Careers</a>
+      <a href="/#contact" class="nav-cta">Get a Quote</a>
+    </nav>
+    <button class="hbtn" id="hbtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mnav" id="mnav">
+    <a href="/#home"         onclick="cmn()">Home</a>
+    <a href="/#services"     onclick="cmn()">Services</a>
+    <a href="/#about"        onclick="cmn()">About Us</a>
+    <a href="/#testimonials" onclick="cmn()">Reviews</a>
+    <a href="/career"        onclick="cmn()">Careers</a>
+    <a href="/#contact"      onclick="cmn()">Get a Quote</a>
+    <a href="tel:+14378810022" style="color:#ff8080;">📞 +1 (437) 881-0022</a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-content">
+    <div class="hero-pill">Now Hiring Driver Teams &amp; Operators</div>
+    <h1 class="ht">
+      Drive with <span class="r">MKG.</span><br>
+      Elevate Your Career.
+    </h1>
+    <p class="hero-desc">
+      Join Brampton's premier freight carrier. We value safety, respect your family time, and provide consistent miles with top-tier compensation.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ═══ -->
+<section id="benefits">
+  <div class="sec">
+    <div class="eyebrow">Driver Benefits</div>
+    <h2 class="st">Why Professional Drivers <span class="r">Choose MKG</span></h2>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card" data-a>
+        <div class="b-ico"><i class="fas fa-wallet"></i></div>
+        <h3>High Earnings</h3>
+        <p>Excellent mileage rates, extra pick/drop pay, safety bonuses, and highly competitive owner-operator splits.</p>
+      </div>
+
+      <div class="benefit-card" data-a>
+        <div class="b-ico"><i class="fas fa-truck-front"></i></div>
+        <h3>Premium Fleet</h3>
+        <p>Newer-model Volvo and Freightliner trucks. Well-maintained flatbed and dry van trailers for maximum road safety.</p>
+      </div>
+
+      <div class="benefit-card" data-a>
+        <div class="b-ico"><i class="fas fa-home"></i></div>
+        <h3>Flexible Home Time</h3>
+        <p>Steady lanes and scheduled routes that allow you to balance excellent miles with your personal life.</p>
+      </div>
+
+      <div class="benefit-card" data-a>
+        <div class="b-ico"><i class="fas fa-headset"></i></div>
+        <h3>24/7 Dispatch Support</h3>
+        <p>Dedicated in-house dispatchers who understand the road, provide clear manifests, and respect your independence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPENINGS ═══ -->
+<section id="openings">
+  <div class="sec">
+    <div class="eyebrow">Job Postings</div>
+    <h2 class="st">Current Open <span class="r">Positions</span></h2>
+    
+    <div class="openings-list">
+      <!-- Position 1 -->
+      <div class="job-card" data-a>
+        <div class="job-info">
+          <h3>AZ Cross-Border Company Driver</h3>
+          <div class="job-meta">
+            <span>FTL / LTL</span>
+            <span>US &amp; Canada</span>
+            <span class="red-badge">Urgent</span>
+          </div>
+          <p class="job-desc">
+            We are seeking experienced Class AZ company drivers to haul dry van and flatbed freight between Ontario, Canada and major corridors in the United States.
+          </p>
+          <ul class="job-requirements">
+            <li><i class="fas fa-chevron-right"></i> Minimum 1-2 years of verifiable AZ driving experience.</li>
+            <li><i class="fas fa-chevron-right"></i> Clean CVOR and Driver Abstract.</li>
+            <li><i class="fas fa-chevron-right"></i> Border crossing capability (FAST card preferred, or valid passport).</li>
+          </ul>
+        </div>
+        <div class="job-action">
+          <div class="job-pay">
+            <div class="amt">$0.65 - $0.72</div>
+            <div class="lbl">Per Mile (DOE)</div>
+          </div>
+          <a href="#apply" class="btn-apply-job"><i class="fas fa-file-signature"></i> Apply Now</a>
+        </div>
+      </div>
+
+      <!-- Position 2 -->
+      <div class="job-card" data-a>
+        <div class="job-info">
+          <h3>AZ Owner Operator (Flatbed / Dry Van)</h3>
+          <div class="job-meta">
+            <span>Owner Operator</span>
+            <span>Steady Lanes</span>
+            <span>Fuel Cards</span>
+          </div>
+          <p class="job-desc">
+            Maximize your truck's earning potential. Join our owner-operator fleet and access high-paying cross-border freight lanes with weekly settlements and fuel discounts.
+          </p>
+          <ul class="job-requirements">
+            <li><i class="fas fa-chevron-right"></i> Tractor in excellent operating condition (safety certified).</li>
+            <li><i class="fas fa-chevron-right"></i> Valid AZ license with cross-border abstract history.</li>
+            <li><i class="fas fa-chevron-right"></i> Professional attitude and dedication to safety compliance.</li>
+          </ul>
+        </div>
+        <div class="job-action">
+          <div class="job-pay">
+            <div class="amt">85% / Split</div>
+            <div class="lbl">Revenue Share</div>
+          </div>
+          <a href="#apply" class="btn-apply-job"><i class="fas fa-file-signature"></i> Apply Now</a>
+        </div>
+      </div>
+
+      <!-- Position 3 -->
+      <div class="job-card" data-a>
+        <div class="job-info">
+          <h3>Local AZ Driver (GTA &amp; Regional)</h3>
+          <div class="job-meta">
+            <span>Local Routes</span>
+            <span>Home Daily</span>
+            <span>Dedicated Run</span>
+          </div>
+          <p class="job-desc">
+            Prefer staying local? We have openings for local AZ drivers serving the Greater Toronto Area (GTA) and regional Ontario routes. Get home to your family every single day.
+          </p>
+          <ul class="job-requirements">
+            <li><i class="fas fa-chevron-right"></i> Valid Class AZ license with 1+ years local shunt/driving experience.</li>
+            <li><i class="fas fa-chevron-right"></i> Excellent reversing and docking skills.</li>
+            <li><i class="fas fa-chevron-right"></i> Flexible to work morning or evening shifts.</li>
+          </ul>
+        </div>
+        <div class="job-action">
+          <div class="job-pay">
+            <div class="amt">$26 - $30</div>
+            <div class="lbl">Hourly Pay (DOE)</div>
+          </div>
+          <a href="#apply" class="btn-apply-job"><i class="fas fa-file-signature"></i> Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APPLY FORM ═══ -->
+<section id="apply">
+  <div class="sec">
+    <div class="apply-container" data-a>
+      <h3>Submit Your Application</h3>
+      <p class="sub">Take the next step in your driving career. Fill out the form below and our recruitment coordinator will contact you.</p>
+      
+      <div class="apply-form">
+        <div class="frow">
+          <div class="fg">
+            <label>First Name</label>
+            <input type="text" id="afname" placeholder="John" required>
+          </div>
+          <div class="fg">
+            <label>Last Name</label>
+            <input type="text" id="alname" placeholder="Doe" required>
+          </div>
+        </div>
+        
+        <div class="frow">
+          <div class="fg">
+            <label>Phone Number</label>
+            <input type="tel" id="aphone" placeholder="(416) 555-0199" required>
+          </div>
+          <div class="fg">
+            <label>Email Address</label>
+            <input type="email" id="aemail" placeholder="john.doe@email.com" required>
+          </div>
+        </div>
+
+        <div class="frow">
+          <div class="fg">
+            <label>License Classification</label>
+            <select id="alicense">
+              <option value="AZ">Class AZ / Class 1</option>
+              <option value="DZ">Class DZ / Class 3</option>
+              <option value="Class G">Class G / Passenger</option>
+              <option value="Other">Other Class</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Years of Driving Experience</label>
+            <select id="aexp">
+              <option value="Less than 1 year">Less than 1 year</option>
+              <option value="1-2 years">1 - 2 years</option>
+              <option value="3-5 years">3 - 5 years</option>
+              <option value="5+ years">5+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Position of Interest</label>
+          <select id="aposition">
+            <option value="AZ Company Driver">AZ Cross-Border Company Driver</option>
+            <option value="Owner Operator">AZ Owner Operator (Flatbed/Dry Van)</option>
+            <option value="Local Driver">Local AZ Driver (GTA &amp; Regional)</option>
+            <option value="Other Office Logistics">Logistics / Dispatch / Office</option>
+          </select>
+        </div>
+
+        <div class="fg">
+          <label>Cover Letter / Additional Information</label>
+          <textarea id="amessage" placeholder="Tell us about your equipment, abstract status, driving history, or preferred routes..."></textarea>
+        </div>
+
+        <button class="fsub" id="asub" onclick="submitAppForm()">
+          <i class="fas fa-paper-plane"></i> Submit Application
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <img src="MKG Freightlines.png" alt="MKG"
+               onerror="this.style.display='none'">
+          <div>
+            <div class="fn">MKG Freight Lines</div>
+            <span class="fs">Brampton · Ontario · Canada</span>
+          </div>
+        </div>
+        <p>Brampton's trusted carrier — FTL, LTL, dedicated dispatch &amp; cross-border freight. CVOR certified. Owner-operated. Built on reliability.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/#services">Full Truckload (FTL)</a></li>
+          <li><a href="/#services">Partial Loads (LTL)</a></li>
+          <li><a href="/#services">Dedicated Dispatch</a></li>
+          <li><a href="/#services">Cross-Border USA / Canada</a></li>
+          <li><a href="/#services">Expedited Freight</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#about">About Us</a></li>
+          <li><a href="/#testimonials">Client Reviews</a></li>
+          <li><a href="/#why">Why Choose Us</a></li>
+          <li><a href="/career">Careers</a></li>
+          <li><a href="/#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <div class="ft-ci2"><i class="fas fa-phone"></i><a href="tel:+14378810022">+1 (437) 881-0022</a></div>
+        <div class="ft-ci2"><i class="fas fa-envelope"></i><a href="mailto:Info@mkgfreightlines.com">Info@mkgfreightlines.com</a></div>
+        <div class="ft-ci2"><i class="fas fa-map-marker-alt"></i><span>78 Hockley Path<br>Brampton, ON, Canada</span></div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2025 MKG Freight Lines. All rights reserved. | Website by Social Daddy Inc.</p>
+      <div class="cv">
+        <i class="fas fa-shield-alt" style="color:var(--red)"></i>
+        CVOR: <span>206838232</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Mobile nav ──
+document.getElementById('hbtn').addEventListener('click',()=>{
+  document.getElementById('mnav').classList.toggle('open');
+});
+function cmn(){document.getElementById('mnav').classList.remove('open');}
+
+// ── Header shadow on scroll ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('hdr').style.boxShadow=
+    window.scrollY>60?'0 4px 32px rgba(0,0,0,.4)':'none';
+});
+
+// ── Application Form Submission ──
+function submitAppForm(){
+  const b=document.getElementById('asub');
+  const originalText = b.innerHTML;
+  
+  const email = document.getElementById('aemail').value;
+  const name = document.getElementById('afname').value + ' ' + document.getElementById('alname').value;
+  if(!email || !name.trim()) {
+    alert("Please provide your name and email address so we can reach you!");
+    return;
+  }
+
+  b.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting...';
+  
+  const templateParams = {
+    name: name,
+    phone: document.getElementById('aphone').value,
+    email: email,
+    license: document.getElementById('alicense').value,
+    experience: document.getElementById('aexp').value,
+    position: document.getElementById('aposition').value,
+    message: document.getElementById('amessage').value
+  };
+
+  // REPLACE 'YOUR_SERVICE_ID' AND 'YOUR_TEMPLATE_ID' WITH ACTUAL KEYS IN EMAILJS
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(() => {
+      b.innerHTML='<i class="fas fa-check"></i> Application Submitted!';
+      b.style.background='#047857';
+      // clear form
+      document.querySelectorAll('.apply-form input, .apply-form textarea').forEach(el => el.value = '');
+      document.querySelectorAll('.apply-form select').forEach(el => el.selectedIndex = 0);
+      
+      setTimeout(()=>{
+        b.innerHTML=originalText;
+        b.style.background='var(--red)';
+      }, 5000);
+    }, (error) => {
+      console.error('FAILED...', error);
+      b.innerHTML='<i class="fas fa-exclamation-triangle"></i> Error submitting request.';
+      setTimeout(()=>{
+        b.innerHTML=originalText;
+        b.style.background='var(--red)';
+      }, 4000);
+    });
+}
+
+// ── Cooler 3D Scroll & Live Animation ──
+let delayCounter = 0;
+let resetTimer = null;
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = `${delayCounter * 0.1}s`;
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+      delayCounter++;
+      
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => { delayCounter = 0; }, 100);
+    } else {
+      e.target.style.transitionDelay = '0s';
+      e.target.style.opacity = '0';
+      e.target.style.transform = 'translateY(60px) scale(0.92) rotateX(-15deg)';
+    }
+  });
+}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+// Add 3D perspective to grids
+document.querySelectorAll('.benefits-grid, .openings-list').forEach(grid => {
+  grid.style.perspective = '1200px';
+});
+
+// Target elements
+const animatedElements = document.querySelectorAll('[data-a], .benefit-card, .job-card, .apply-container');
+
+animatedElements.forEach((el) => {
+  el.style.opacity = '0';
+  el.style.transformOrigin = 'center top';
+  el.style.transform = 'translateY(60px) scale(0.92) rotateX(-15deg)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  io.observe(el);
+});
+</script>
+</body>
+</html>

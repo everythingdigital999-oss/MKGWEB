@@ -1,0 +1,5 @@
+node_modules/
+SDMLS-main.zip
+.vercel/
+.system_generated/
+*.log

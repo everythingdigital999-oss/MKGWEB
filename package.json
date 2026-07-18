@@ -1,0 +1,15 @@
+{
+  "name": "mkg-freightlines",
+  "version": "1.0.0",
+  "description": "Local development server for MKG Freightlines website",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
