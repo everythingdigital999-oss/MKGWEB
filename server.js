@@ -5,8 +5,17 @@ const fs = require('fs');
 const app = express();
 const DEFAULT_PORT = process.env.PORT || 3000;
 
-// Serve static files from the SDMLS-main directory
-const publicDir = path.join(__dirname, 'SDMLS-main');
+// Serve static files from the repository root directory
+const publicDir = __dirname;
+
+// Prevent public access to local config and node files
+app.use((req, res, next) => {
+  const forbiddenFiles = ['/server.js', '/package.json', '/package-lock.json', '/.gitignore', '/SDMLS-main.zip'];
+  if (forbiddenFiles.includes(req.path.toLowerCase())) {
+    return res.status(403).send('Forbidden');
+  }
+  next();
+});
 
 // Clean URLs middleware
 app.use((req, res, next) => {
