@@ -640,6 +640,101 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
   .btn-red,.btn-ghost{justify-content:center;width:100%;}
   .stat-card{padding:20px;}
 }
+
+/* ─── SLIDESHOW ─────────────────────────────────────────── */
+.mkg-slider-container {
+  position: relative;
+  width: 100%;
+  max-height: 520px;
+  height: 55vw;
+  min-height: 300px;
+  margin-top: 56px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.mkg-slider-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.mkg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mkg-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+.mkg-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.slider-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-50%) scale(1.08);
+}
+.prev-btn { left: 24px; }
+.next-btn { right: 24px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  background: rgba(10, 22, 40, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dot.active {
+  background: #fff;
+  transform: scale(1.2);
+  width: 18px;
+  border-radius: 100px;
+}
 </style>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
@@ -919,8 +1014,29 @@ footer{background:#060F1C;color:rgba(255,255,255,.5);padding:60px 28px 32px;}
       </div>
     </div>
 
-    <div style="text-align: center; margin-top: 56px;" data-a>
-      <img src="mkg2.png" alt="MKG Freight Lines Truck" style="width: 100%; max-height: 480px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,.15);">
+    <div class="mkg-slider-container" data-a>
+      <div class="mkg-slider-track">
+        <div class="mkg-slide active"><img src="img/mkg-1.jpeg" alt="MKG Freight Lines Truck 1"></div>
+        <div class="mkg-slide"><img src="img/mkg-2.jpeg" alt="MKG Freight Lines Truck 2"></div>
+        <div class="mkg-slide"><img src="img/mkg-3.jpeg" alt="MKG Freight Lines Truck 3"></div>
+        <div class="mkg-slide"><img src="img/mkg-4.jpeg" alt="MKG Freight Lines Truck 4"></div>
+        <div class="mkg-slide"><img src="img/mkg-5.jpeg" alt="MKG Freight Lines Truck 5"></div>
+        <div class="mkg-slide"><img src="img/mkg-6.jpeg" alt="MKG Freight Lines Truck 6"></div>
+      </div>
+      
+      <!-- Nav arrows -->
+      <button class="slider-btn prev-btn" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-btn next-btn" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+      
+      <!-- Dots -->
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
 
     <!-- Big pull quote -->
@@ -1167,6 +1283,7 @@ function submitForm(){
   b.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
   
   const templateParams = {
+    to_email: 'Info@mkgfreightlines.com', // Recipient email address
     fname: document.getElementById('fname').value,
     lname: document.getElementById('lname').value,
     phone: document.getElementById('phone').value,
@@ -1177,6 +1294,8 @@ function submitForm(){
     message: document.getElementById('message').value
   };
 
+  // NOTE: Configure your EmailJS Template "To Email" field to {{to_email}}
+  // or statically enter Info@mkgfreightlines.com in your EmailJS Template settings.
   // REPLACE 'YOUR_SERVICE_ID' AND 'YOUR_TEMPLATE_ID' WITH ACTUAL KEYS
   emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
     .then(() => {
@@ -1238,6 +1357,79 @@ animatedElements.forEach((el) => {
   el.style.transition = 'opacity 0.6s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
   io.observe(el);
 });
+
+// ── Slideshow JavaScript Logic ──
+let activeSlideIndex = 0;
+const mkgSlides = document.querySelectorAll('.mkg-slide');
+const mkgDots = document.querySelectorAll('.dot');
+const totalMkgSlides = mkgSlides.length;
+let mkgSlideTimer;
+
+function showMkgSlide(index) {
+  if (index >= totalMkgSlides) activeSlideIndex = 0;
+  else if (index < 0) activeSlideIndex = totalMkgSlides - 1;
+  else activeSlideIndex = index;
+
+  mkgSlides.forEach((slide, i) => {
+    if (i === activeSlideIndex) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  mkgDots.forEach((dot, i) => {
+    if (i === activeSlideIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function nextMkgSlide() {
+  showMkgSlide(activeSlideIndex + 1);
+}
+
+function prevMkgSlide() {
+  showMkgSlide(activeSlideIndex - 1);
+}
+
+function startMkgTimer() {
+  mkgSlideTimer = setInterval(nextMkgSlide, 4500);
+}
+
+function resetMkgTimer() {
+  clearInterval(mkgSlideTimer);
+  startMkgTimer();
+}
+
+// Attach event listeners
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    nextMkgSlide();
+    resetMkgTimer();
+  });
+}
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    prevMkgSlide();
+    resetMkgTimer();
+  });
+}
+
+mkgDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    showMkgSlide(index);
+    resetMkgTimer();
+  });
+});
+
+// Initialize
+startMkgTimer();
 </script>
 </body>
 </html>

@@ -771,6 +771,7 @@ function submitAppForm(){
   b.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting...';
   
   const templateParams = {
+    to_email: 'Info@mkgfreightlines.com', // Recipient email address
     name: name,
     phone: document.getElementById('aphone').value,
     email: email,
@@ -780,6 +781,8 @@ function submitAppForm(){
     message: document.getElementById('amessage').value
   };
 
+  // NOTE: Configure your EmailJS Template "To Email" field to {{to_email}}
+  // or statically enter Info@mkgfreightlines.com in your EmailJS Template settings.
   // REPLACE 'YOUR_SERVICE_ID' AND 'YOUR_TEMPLATE_ID' WITH ACTUAL KEYS IN EMAILJS
   emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
     .then(() => {
